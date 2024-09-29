@@ -1,0 +1,329 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+    color: white;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    z-index: -1;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    padding-left: 2%;
+    width: 300px;
+    z-index: 2;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    font-family:'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    top: -20px;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(197, 197, 197);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.fb{
+    position: relative;
+    bottom: -15px;
+    width: 40px;
+    left: -10px;
+}
+nav ul li.fbicon a::after {
+    bottom: -15px; 
+    left: -10px;
+}
+.slider-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.slider{
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
+}
+.slider::-webkit-scrollbar {
+	display: none;
+}
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+.slider-nav{
+    display: flex;
+    column-gap: 2rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.slider-nav a{
+    background-color: transparent;
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #262626;
+    border-width: 2px;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+
+}
+.slider-nav a:hover{
+    background-color: black;
+}
+.header-text{
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 50px;
+    margin-top: 70px;
+    font-size: 25px;
+}
+.header-text h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+    font-size: 45px;
+    opacity: 0;
+    animation: fly-up 1s forwards;
+}
+.header-text h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    margin-top:10px;
+    opacity: 0;
+    animation: fly-up 1s forwards;
+    animation-delay: 1s;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+
+@keyframes fly-up {
+    0% {
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+/* -------------------Service--------------------- */
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#services{
+    padding: 2% 5% 5% 5%;
+}
+.services-list{
+    font-family: 'Courier New', Courier, monospace;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    position: relative;
+    padding: 30px;
+    background: #262626;
+    border-radius: 30px;
+    padding-bottom: 100px;
+    font-size: 13px;
+    font-weight: 300;
+    opacity: 0;
+    transition: background 0.5s, transform 0.5s;
+}
+.services-list div.visible{
+    animation: fly-up 0.5s ease forwards; 
+}
+.services-list div.visible:nth-child(1){
+    animation-delay: 0.3s;
+}
+.services-list div.visible:nth-child(2){
+    animation-delay: 0.6s;
+}
+.services-list div.visible:nth-child(3){
+    animation-delay: 0.9s;
+}
+.services-list div h2{
+    font-size: 35px;
+    font-weight: 2500;
+    margin-bottom: 15px;
+}
+.services-list div:hover{
+    background-color: #ff004f;
+}
+/* ------------portfolio------------------ */
+#portfolio{
+    padding: 2% 5% 5% 5%;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+/* -----------------feedback---------------- */
+#reviews{
+    padding: 2% 5% 5% 5%;
+}
+.reviews-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.review{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.review img{
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.reviews-list div{
+    position: relative;
+    opacity: 0;
+    transition: background 0.5s, transform 0.5s;
+}
+.reviews-list div.visible{
+    animation: fly-up 0.5s ease forwards; 
+}
+.reviews-list div.visible:nth-child(1){
+    animation-delay: 0.3s;
+}
+.reviews-list div.visible:nth-child(2){
+    animation-delay: 0.6s;
+}
+.reviews-list div.visible:nth-child(3){
+    animation-delay: 0.9s;
+}
+/* -------------------------contact------------------- */
+#contact{
+    padding: 2% 5% 5% 5%;
+}
+.contact-left{
+    flex-basis: 40%;
+}
+.contact-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: ;
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-left: 10%;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: 20;
+}
+.contact-left p i{
+    bottom: -5px;
+    position: relative;
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 30px;
+}
+.social-icons{
+    margin-top: 30px;
+    margin-left: 10%;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ff004f;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    transform: translateY(-5px);
+}
+.contact-right img{
+    width: 35%;
+    display: flex;
+    object-fit: contain;
+    
+}
+.contact-right p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    justify-content: center;
+}
+.copyright{
+    text-align: center;
+    margin-bottom: 10px;
+}
+/* ----------------------css for smaller screen-------------------- */
+/* @media only screen and (max-with: 768px){
+    #header{
+        background-image: url(/Portfolio/Sample/keqing.jpg);
+        z-index:
+    }
+} */

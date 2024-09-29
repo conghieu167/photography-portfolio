@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hieu's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" size="32x32" href="Camere_icon.png">
+    <script src="https://kit.fontawesome.com/7a496f6a85.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="/Portfolio/Sample/nino_ngang.Jpeg">
+                <img id="slide-2" src="/Portfolio/Sample/yone_ngang.jpg">
+                <img id="slide-3" src="/Portfolio/Sample/reze_ngang.png">
+                <img id="slide-4" src="/Portfolio/Sample/yuji_ngang.jpg">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+            </div>
+        </div>
+        <div class="container"></div>
+            <nav>
+                <img src="logotrang_nobg.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Rules and Service</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="fbicon">
+                        <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank">
+                            <img class="fb" src="fb_icon_nobg.png">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- <div class="header-text">
+                <p>Hi I'm Cong Hieu</p>
+                <h1>A Newbie <span>Photographer</span></h1>
+                <h2>Checkout my pictures!</h2>
+            </div> -->
+        </div>
+    </div>
+<!-- --------------------------Portfolio----------------------------- -->
+ <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Portfolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="/Portfolio/Sample/mailya.jpg">
+            </div>
+            <div class="work">
+                <img src="/Portfolio/Sample/Nino.jpg">
+            </div>
+            <div class="work">
+                <img src="/Portfolio/Sample/Robin.png">
+            </div>
+            <div class="work">
+                <img src="/Portfolio/Sample/ahri.jpg">
+            </div>
+            <div class="work">
+                <img src="/Portfolio/Sample/Mitsuri.jpg">
+            </div>
+            <div class="work">
+                <img src="/Portfolio/Sample/conan.jpg">
+            </div>
+        </div>
+    </div>
+ </div>
+<!-- ----------------Services----------------------- -->
+<div id="services">
+    <div id="container">
+        <h1 class="sub-title">My services</h1>
+        <div class="services-list">
+            <div>
+                <h2>Single Photoshoot</h2>
+                <p>...</p>
+            </div>
+            <div>
+                <h2>Couple Photoshoot</h2>
+                <p>...</p>
+            </div>
+            <div>
+                <h2>Group Photoshoot</h2>
+                <p>...</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="sub-title">Rules</h1>
+        <img src="/Portfolio/Rules.jfif">
+    </div>
+</div>
+<!-- --------------------Feedback-------------------------->
+ <div id="reviews">
+    <div id="container">
+        <h1 class="sub-title">Reviews</h1>
+            <div class="reviews-list">
+                <div class="review">
+                    <img src="/Portfolio/reviews/bxm.png">
+                </div>
+                <div class="review">
+                    <img src="/Portfolio/reviews/nane.png">
+                </div>
+                <div class="review">
+                    <img src="/Portfolio/reviews/ca.png">
+                </div>
+            </div>
+    </div>
+ </div>
+ <!-- ------------------------contact---------------------- -->
+<div id="contact">
+    <div id="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i> taconghieu167@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 0352401581</p>
+                <div class="div social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.instagram.com/chieuta.167/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://github.com/conghieu167" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://www.linkedin.com/in/c%C3%B4ng-hi%E1%BA%BFu-t%E1%BA%A1-a00a5a32a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <img src="logotrang_nobg.png" class="logo">
+                <p>Captures the art of cosplay through a camera lens.<p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <p>© 2024 by Cong Hieu. Cong Hieu Ta's First HTML & CSS Project</p>
+</div>
+<!-- ---------------------------script-------------------------- -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const serviceDivs = document.querySelectorAll('.services-list div');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.01 
+        });
+        serviceDivs.forEach(div => {
+            observer.observe(div);
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const serviceDivs = document.querySelectorAll('.reviews-list div');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.01 
+        });
+        serviceDivs.forEach(div => {
+            observer.observe(div);
+        });
+    });
+</script>
+
+</body>
+</html>
